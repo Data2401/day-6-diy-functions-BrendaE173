@@ -1,6 +1,6 @@
 ---
 title: "In Class Lab - DIY Functions"
-author: "Dr. Shoemaker"
+author: "Brenda Nava"
 date: "DATA 2401"
 output: html_document
 ---
@@ -17,6 +17,16 @@ The questions from your notes today are below, please copy your answers them her
 
 ```{R}
 
+Faren_to_celsius <- function(temp_f) {
+  
+  (temp_f - 32)*(5/9)
+  
+
+  
+}
+Faren_to_celsius(32)
+
+
 
 ```
 
@@ -24,6 +34,16 @@ The questions from your notes today are below, please copy your answers them her
 
 
 ```{r}
+
+conversion <- function(temp_f, distance_f){
+  temp_c <- (temp_f-32)*(5/9)
+  distance_m <- distance_f/3.281
+  
+  return(c(temp_c, distance_m))
+}
+conversion(32, 3)
+
+
 
 
 ```
@@ -33,6 +53,15 @@ The questions from your notes today are below, please copy your answers them her
 
 ```{R}
 
+num1 <- 7
+
+if (num1 >0) {
+  
+  print("Positive number detected.")
+  
+} else {
+  print("Negative number detected")
+}
 
 ```
 
@@ -40,25 +69,39 @@ The questions from your notes today are below, please copy your answers them her
    + Don't use `abs()`. Use the flow from problem 1 and multiply by negative one as necessary. 
    
 ```{r}
+absolute_value <- function(test_num) {
+  if(test_num >= 0){
+    print("Absolute Value detected")
+  } else {
+    print("Absolute value not detected")
+  }
+  
+}
 
-
+absolute_value(-7)
 ```
 
 5. Hard mode: add an error check to that function that prints out the string "Please pass a numerical value to this function" if the user passes the function a string. 
    + There are functions that check and return T/F: `is.numeric()` or `is.character()` would be relevant here
    
+   
+   
 ```{r}
 
+is_number <- function(user_number){
+  
+  if (is.numeric(user_number)) {
+    print("Number detected")
+  
+    } else if (is.character(user_number)) {
+    print("Please pass a numerical value to this function")
+  }
+}
+
+is_number("flower")
+is_number(9)
 
 
 ```
-   
-   
 
-
-
-
-
-
-```
 
